@@ -36,7 +36,7 @@ async fn main() -> Result<(), anyhow::Error> {
                 SuiJsonValue::from_str("0xb62bc6e9df02b1b0f3ab1fb8fbc08c210ea82c67")?,
                 SuiJsonValue::from_str("\"1\"")?,
                 SuiJsonValue::from_str("\"2\"")?,
-                SuiJsonValue::from_str("0x8382de9fd568a6a3308bfb9f3a1c8ac46b648209")?,
+                SuiJsonValue::from_str("0x7656fc4c24a42e7b18ab51d0b205b67a6c0a3bfc")?,
             ],
             None,
             1000,
@@ -55,20 +55,6 @@ async fn main() -> Result<(), anyhow::Error> {
         .await?;
 
     println!("{:?}", transaction_response);
-    // match sui
-    //     .read_api()
-    //     .get_object(ObjectID::from_str(
-    //         "0xb62bc6e9df02b1b0f3ab1fb8fbc08c210ea82c67",
-    //     )?)
-    //     .await?
-    // {
-    //     SuiObjectRead::Exists(sui_obj) => {
-    //         let forge = sui_obj.data.try_as_move().unwrap().deserialize::<Forge>();
-    //         println!("{:?}", forge.unwrap());
-
-    //     }
-    //     _ => println!("abc"),
-    // };
 
     Ok(())
 }
